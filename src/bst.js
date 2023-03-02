@@ -3,13 +3,24 @@ export default class BST {
     this.root = null;
   }
 
-  insertNode(node) {
-    if(this.root === null){
-      this.root = node;  
-    } else if (this.root.data > node.data) {
-      this.root.left = node;
-    } else if (this.root.data < node.data) {
-      this.root.right = node;
+  insertNode(insertedNode) {
+    if (this.root === null) {
+      this.root = insertedNode;
+    } else {
+      let currentNode = this.root;
+      while (true) {
+        if (currentNode.data > insertedNode.data) {
+          if (currentNode.left === null) {
+            currentNode.left = insertedNode;
+            return this;
+          } else {
+            currentNode = currentNode.left;
+          }
+        } else if (currentNode.data < insertedNode.data) {
+          currentNode.right = insertedNode;
+          return this;
+        }
+      }
     }
   }
 }

@@ -7,7 +7,7 @@ export default class BST {
     if (this.root === null) {
       this.root = insertedNode;
     } else {
-      let currentNode = this.root;
+      let currentNode = this.root;    
       while (true) {
         if (currentNode.data > insertedNode.data) {
           if (currentNode.left === null) {
@@ -17,8 +17,12 @@ export default class BST {
             currentNode = currentNode.left;
           }
         } else if (currentNode.data < insertedNode.data) {
-          currentNode.right = insertedNode;
-          return this;
+          if (currentNode.right === null) {
+            currentNode.right = insertedNode;
+            return this;
+          } else {
+            currentNode = currentNode.right
+          }
         }
       }
     }

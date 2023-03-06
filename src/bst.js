@@ -47,6 +47,6 @@ export default class BST {
           return false;
         }
       }
-    }
+    } 
   }
 }

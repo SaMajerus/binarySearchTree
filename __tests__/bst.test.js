@@ -94,9 +94,9 @@ describe('binarySearchTree', () => {
     expect(pbst.search(4)).toEqual(true);
   });
 
-  // test('it should return false if the root node is not equal to 31', () => {
-  //   expect(pbst.search(31)).toEqual(false);
-  // });
+  test('it should return false if the root node is not equal to 31', () => {
+    expect(pbst.search(31)).toEqual(false);
+  });
 
   test('it should return true if the first child node on the left is equal to 2', () => {
     expect(pbst.search(2)).toEqual(true);
@@ -108,5 +108,10 @@ describe('binarySearchTree', () => {
 
   test('it should return true if the tree includes 7', () => {   //Make sure that the method is able to traverse -- and search -- to the right.
     expect(pbst.search(7)).toEqual(true);
+  }); 
+
+
+  test('it should return true if the tree includes 5', () => {   //Verifies that Search can traverse Left then Right, & vice versa. 
+    expect(pbst.search(5)).toEqual(true);
   });
 });

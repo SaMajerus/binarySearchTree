@@ -105,4 +105,8 @@ describe('binarySearchTree', () => {
   test('it should return false if the value 0 is not in the tree', () => {
     expect(pbst.search(0)).toEqual(false);
   });
+
+  test('it should return true if the tree includes 7', () => {   //Make sure that the method is able to traverse -- and search -- to the right.
+    expect(pbst.search(7)).toEqual(true);
+  });
 });

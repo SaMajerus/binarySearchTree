@@ -40,8 +40,9 @@ export default class BST {
           return true;
         } else if (currentNode.data > value) {
           currentNode = currentNode.left;
+        } else if (currentNode.data < value) {
+          currentNode = currentNode.right;
         }
-        // The conditional below is new.
         if (currentNode === null) {
           return false;
         }
